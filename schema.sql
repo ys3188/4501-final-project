@@ -1,7 +1,7 @@
 
 CREATE TABLE IF NOT EXISTS zipcode (
     id INTEGER PRIMARY KEY,
-    zipcode VARCHAR(10),
+    ZIPCODE VARCHAR(10),
     geometry GEOMETRY(Point, 4326)
 );
 
@@ -9,7 +9,7 @@ DROP INDEX IF EXISTS idx_zipcode_geometry;
 CREATE INDEX idx_zipcode_geometry ON zipcode USING GIST (geometry);
 
 CREATE TABLE IF NOT EXISTS complaint (
-    id INTEGER PRIMARY KEY,
+    unique_key INTEGER PRIMARY KEY,
     created_date TIMESTAMP,
     incident_zip VARCHAR(15),
     complaint_type VARCHAR(100),
