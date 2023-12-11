@@ -7,7 +7,7 @@ FROM
 JOIN
     rents ON trees.zipcode = CAST(rents."RegionName" AS text)
 WHERE
-    rents."Date" BETWEEN '2023-07-31' AND '2023-08-31'
+    rents."Date" BETWEEN '2023-08-01' AND '2023-08-31'
 GROUP BY
     trees.zipcode
 ORDER BY
